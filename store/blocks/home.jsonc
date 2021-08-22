@@ -1,0 +1,118 @@
+{
+  "store.home": { 
+    "blocks": [
+      "tab-layout#home",
+      "rich-text",
+      "slider-layout#banner",
+      "image",
+      "rich-text#shelf-title",
+      "flex-layout.row#shelf"
+    ]
+  },
+//======================[inicio do menu]=======================================
+"tab-layout#home": {
+  "children": [
+    "tab-list",
+    "tab-content"
+  ]
+},
+"tab-list": {
+  "children": [
+    "tab-list.item#1",
+    "tab-list.item#2"
+    ]
+},
+"tab-list.item#1": {
+  "props": {
+    "tabId": "majorAppliances",
+    "label": "Major Appliances",
+    "defaultActiveTab": true
+  }
+},
+"tab-list.item#2": {
+  "props": {
+    "tabId": "electronics",
+    "label": "Electronics"
+  }
+},
+//======================[fim do menu]=======================================
+  "rich-text": { 
+    "props": { 
+      "text": "Desafio 03",
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "font": "t-heading-1"
+    }
+  }, //fim rich-text
+  "slider-layout#banner": {
+    "props": {
+      "itemsPerPage": {
+        "desktop": 1,
+        "tablet": 1,
+        "phone": 1
+      },
+      "infinite": true,
+      "showNavigationArrows": "desktopOnly",
+      "blockClass": "carousel"
+    },
+    "children": ["image#01", "image#02", "image#03","image#04"]
+  },//fim slider-layout
+                "image#01": {
+                  "props": {
+                    "src": "https://dummyimage.com/800x600/59ff00/000000.png&text=Banner01",
+                    "maxHeight": 600
+                  }
+                },
+                "image#02": {
+                  "props": {
+                    "src": "https://dummyimage.com/800x600/59ff00/000000.png&text=Banner02",
+                    "maxHeight": 600
+                  }
+                },
+                "image#03": {
+                  "props": {
+                    "src": "https://dummyimage.com/800x600/59ff00/000000.png&text=Banner03",
+                    "maxHeight": 600
+                  }
+                },
+                "image#04": {
+                  "props": {
+                    "src": "https://dummyimage.com/800x600/59ff00/000000.png&text=Banner04",
+                    "maxHeight": 600
+                  }
+                },
+ //prateleira
+ "rich-text#shelf-title": {
+  "props": {
+    "text": "## Destaques da Home UpMedal!",
+    "blockClass": "shelfTitle"
+  }
+},
+"flex-layout.row#shelf": {
+  "children": ["list-context.product-list#demo1"]
+},
+"list-context.product-list#demo1": {
+  "blocks": ["product-summary.shelf"],
+  "children": ["slider-layout#demo-products"],
+  "props": {
+  "category":"20",
+   "orderBy": "OrderByTopSaleDESC"
+  }
+},
+"slider-layout#demo-products": {
+  "props": {
+    "itemsPerPage": {
+      "desktop": 5,
+      "tablet": 3,
+      "phone": 1
+    },
+    "infinite": true,
+    "fullWidth": false,
+    "blockClass": "shelf"
+  }
+}
+//fim prateleira
+
+                
+
+}//fim tudo
